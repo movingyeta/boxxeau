@@ -2,14 +2,28 @@ const express = require('express')
 const aws = require('aws-sdk')
 
 const app = express()
-app.set('views', './static/html')
-app.use(express.static('./static'))
-app.listen(process.env.PORT || 3000)
+
+const project_route = (route) => 
+    __dirname + '/..' + route
+
+const send_html = (name, sendFile) => 
+    sendFile(name + '.html', {
+        root: project_route('/static/html')
+    })
+
+app.use(express.static(project_route('/static')))
+app.listen(process.env.PORT, () => console.log("Server up"))
 
 const S3_BUCKET = process.env.S3_BUCKET
 
-app.get('/files', (req, res) => res.render('files.html'))
-app.get('/files/upload', (req, res) => res.render('files-upload.html'))
+app.get('/', (req, res) => 
+    res.redirect('/files-upload'))
+
+app.get('/files', (req, res) => 
+    send_html('files', res.sendFile))
+
+app.get('/files/upload', (req, res) => 
+    send_html('files-upload', res.sendFile))
 
 /*
  * Upon request, return JSON containing the temporarily-signed S3 request and
