@@ -1,29 +1,26 @@
 const express = require('express')
 const aws = require('aws-sdk')
+const bodyParser = require('body-parser')
 
 const app = express()
 
 const project_route = (route) => 
     __dirname + '/..' + route
 
-const send_html = (name, sendFile) => 
-    sendFile(name + '.html', {
-        root: project_route('/static/html')
-    })
+const send_html = (name) => 
+    (req, res) => {
+        res.sendFile(name + '.html', {
+            root: project_route('/static/html')
+        })
+    }
 
 app.use(express.static(project_route('/static')))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.listen(process.env.PORT, () => console.log("Server up"))
 
 const S3_BUCKET = process.env.S3_BUCKET
 
-app.get('/', (req, res) => 
-    res.redirect('/files-upload'))
-
-app.get('/files', (req, res) => 
-    send_html('files', res.sendFile))
-
-app.get('/files/upload', (req, res) => 
-    send_html('files-upload', res.sendFile))
+app.get('/', send_html('files-upload'))
 
 /*
  * Upon request, return JSON containing the temporarily-signed S3 request and
@@ -61,5 +58,5 @@ app.get('/sign-s3', (req, res) => {
  * a way that suits your application.
  */
 app.post('/save-details', (req, res) => {
-    // TODO: Read POSTed form data and do something useful
+    console.log("/save-details recived", req.body)
 })
