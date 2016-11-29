@@ -1,0 +1,24 @@
+{
+  "name": "boxxeau",
+  "version": "1.0.0",
+  "description": "Minimal cloud storage web app",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/movingyeta/boxxeau.git"
+  },
+  "keywords": [
+    "cloud",
+    "storage",
+    "web",
+    "app"
+  ],
+  "author": "yetatore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/movingyeta/boxxeau/issues"
+  },
+  "homepage": "https://github.com/movingyeta/boxxeau#readme"
+}
