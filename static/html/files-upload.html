@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <input type="file" id="file-input">
+        <p id="status">Please select a file</p>
+        <img id="preview" src="/images/default.png">
+
+        <form method="POST" action="/save-details">
+            <input type="hidden" id="avatar-url" name="avatar-url" value="/images/default.png">
+            <input type="submit" value="Update profile">
+        </form>
+        <script src="/js/files.js"></script>
+    </body>
+</html>
