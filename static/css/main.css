@@ -1,0 +1,93 @@
+body {
+    background-color: #e3e3e3;
+    margin: 0px;
+}
+
+a {
+    color: #333;
+}
+
+a:hover {
+    color: #3a3;
+}
+
+.strip {
+    padding: 20px 0;
+}
+
+.column-left {
+    width: 220px;
+    float: left;
+    padding: 0 10px 0 30px;
+}
+
+.column-middle {
+    width: 950px;
+    float: left;
+    padding: 0 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.button {
+    text-decoration: none;
+}
+
+.file-icon {
+    margin: 0 10px 10px 0;
+    background-color: #efe;
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #aba;
+    border-width: 0 2px 2px 0;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.file-icon .preview {
+    border: 1px solid #aaa;
+    margin-right: 10px;
+    float: left;
+    width: 40px;
+}
+
+.file-icon .name {
+    display: block;
+}
+
+.file-icon .date {
+    display: block;
+    color: #555;
+}
+
+#SearchBox {
+    width: 910px; /* TODO: This width will be calculated 
+                           from the resultant file grid */
+    margin: 0px;
+    border: 1px solid gray;
+    border-width: 0 2px 2px 0;
+    border-radius: 5px;
+    padding: 10px;
+    height: 20px;
+}
+
+#Logo {
+    height: 30px;
+    padding: 6px 0;
+}
+
+#TrashCan {
+    width: 100%;
+    text-align: center;
+}
+
+#TrashCan img {
+    width: 100px;
+}
