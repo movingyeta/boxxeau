@@ -43,14 +43,21 @@ module.exports = () =>
         }))
     }
 
-    function render (uri, name)
+    function render (uri, view)
     {
         get(uri, (data) =>
         {
-            data.express.res.sendFile(`${name}.html`, {
+            data.express.res.sendFile(`${view}.html`, {
                 root: `${PROJECT_ROOT}/static/html`
             })
         })
+    }
+
+    function initViews (index, views)
+    {
+        render("/", index)
+        for (let view of views)
+            render(`/view/${view}`, view)
     }
 
     function result ()
@@ -62,11 +69,21 @@ module.exports = () =>
         }
     }
 
+    function fromExpressCallback (fn)
+    {
+        return (data) =>
+        {
+            fn(data.express.req, data.express.res)
+        }
+    }
+
     return {
         get: get,
         post: post,
         delete: _delete,
         render: render,
-        result: result
+        initViews: initViews,
+        result: result,
+        fromExpressCallback: fromExpressCallback
     }
 }

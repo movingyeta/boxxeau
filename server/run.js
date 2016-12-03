@@ -3,8 +3,7 @@
 const http = require('./http')()
 const files = require('./files')()
 
-
-http.render("/", "index")
+http.initViews("app", ["login", "app"])
 
 http.get("/files",
     files.list(
