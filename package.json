@@ -1,5 +1,5 @@
 {
-  "name": "boxxeau",
+  "name": "boxxeu",
   "version": "1.0.0",
   "description": "Minimal cloud storage web app",
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/movingyeta/boxxeau.git"
+    "url": "git+https://github.com/movingyeta/boxxeu.git"
   },
   "keywords": [
     "cloud",
@@ -18,9 +18,9 @@
   "author": "yetatore",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/movingyeta/boxxeau/issues"
+    "url": "https://github.com/movingyeta/boxxeu/issues"
   },
-  "homepage": "https://github.com/movingyeta/boxxeau#readme",
+  "homepage": "https://github.com/movingyeta/boxxeu#readme",
   "dependencies": {
     "aws-sdk": "^2.7.8",
     "body-parser": "^1.15.2",
