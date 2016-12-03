@@ -5,7 +5,7 @@
         <link href="/css/main.css" type="text/css" rel="stylesheet">
     </head>
     <body>
-        <!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+        <script src="/js/vue.js"></script>
         <div id="App">
             <div id="TopStrip" class="strip">
                 <div class="column-left">
@@ -21,21 +21,20 @@
                 <div class="column-left">
                     <h3 class="no-margin-top">Hi yetatore!</h3>
                     <ul>
-                        <li><a href="#">Upgrade!</a></li>
-                        <li><a href="#">Preferences</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="#">{{msg.preferences}}</a></li>
+                        <li><a href="#">{{msg.logout}}</a></li>
                     </ul>
                     <h3>Actions</h3>
                     <ul>
-                        <li><a href="#">Upload file</a></li>
+                        <li><a href="#">{{msg.upload}}</a></li>
                     </ul>
                     <h3>Filters</h3>
                     <ul>
-                        <li><a href="#">Images</a></li>
-                        <li><a href="#">Videos</a></li>
-                        <li><a href="#">Documentos</a></li>
-                        <li><a href="#">Aplicaciones</a></li>
-                        <li><a href="#">Otros</a></li>
+                        <li><a href="#">{{msg.images}}</a></li>
+                        <li><a href="#">{{msg.videos}}</a></li>
+                        <li><a href="#">{{msg.documents}}</a></li>
+                        <li><a href="#">{{msg.apps}}</a></li>
+                        <li><a href="#">{{msg.other}}</a></li>
                     </ul>
                     <h3>Trash</h3>
                     <div id="TrashCan">
@@ -43,11 +42,11 @@
                     </div>
                 </div>
                 <div class="column-middle">
-                    <a class="button file-icon" href="#">
+                    <a class="button file-icon" href="#" v-for="file in searchedFiles">
                         <img class="preview" src="/img/default-preview.png">
-                        <span class="name">testfilename</span>
+                        <span class="name">{{file.name}}</span>
                         <span class="date">
-                            <small>01 marzo 1994</small>
+                            <small>{{file.create}}</small>
                         </span>
                     </a>
                 </div>
