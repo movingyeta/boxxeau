@@ -6,8 +6,7 @@ let app = new Vue({
         searchedFiles: function ()
         {
             let has_search_string = new RegExp(`.*${this.search}.*`, "i")
-            let x = this.files.filter((file) => has_search_string.test(file.name))
-            return x
+            return this.files.filter((file) => has_search_string.test(file.name))
         }
     },
     data: {
