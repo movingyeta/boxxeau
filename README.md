@@ -2,5 +2,5 @@
 Vintage-style cloud storage web app
 
 ## Site
-The site is currently hosted at boxxeu.heroku.com
+The site is currently in www.boxxeu.com
 
